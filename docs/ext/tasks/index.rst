@@ -2,8 +2,8 @@
 
 .. _disnake_ext_tasks:
 
-``disnake.ext.tasks`` -- asyncio.Task helpers
-=============================================
+``disnake.ext.tasks``
+=====================
 
 .. versionadded:: 1.1.0
 

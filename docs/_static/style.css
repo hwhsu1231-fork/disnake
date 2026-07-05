@@ -1562,3 +1562,9 @@ div.tooltip .arrow {
 #dark-mode-switch.light .theme-icon.dark {
   opacity: 0%;
 }
+
+/* Allow RST :height: option to work — shibuya theme sets img { height: auto }
+   which overrides the HTML height attribute (lower cascade priority). */
+img[height] {
+  height: revert;
+}

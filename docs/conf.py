@@ -24,6 +24,7 @@ from typing import Any
 
 import versioningit
 from sphinx.application import Sphinx
+from sphinx.locale import _
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -297,12 +298,12 @@ html_experimental_html5_writer = True
 html_theme = "shibuya"
 
 html_context = {
-    "discord_invite": "https://discord.gg/disnake",
-    "discord_extensions": [
-        ("disnake.ext.commands", "ext/commands"),
-        ("disnake.ext.tasks", "ext/tasks"),
-    ],
-    "READTHEDOCS": _IS_READTHEDOCS,
+    # Edit this page
+    "source_type": "github",
+    "source_user": "DisnakeDev",
+    "source_repo": "disnake",
+    "source_version": "master",
+    "source_docs_path": "/docs/",
 }
 
 resource_links = {
@@ -316,7 +317,25 @@ resource_links = {
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "enable_search_shortcuts": True,
+    "github_url": "https://github.com/DisnakeDev/disnake",
+    "discord_url": "https://discord.gg/disnake",
+    "discussion_url": "https://github.com/DisnakeDev/disnake/discussions",
+    "show_ai_links": False,
+    "nav_links": [
+        {
+            "title": _("Guide"),
+            "url": "https://guide.disnake.dev/",
+            "external": True,
+        },
+        {
+            "title": _("Documentation"),
+            "url": "index",
+        },
+        {
+            "title": _("API Reference"),
+            "url": "api/index",
+        },
+    ],
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -331,7 +350,7 @@ html_theme_options = {
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-# html_logo = None
+html_logo = "_static/disnake.svg"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -495,11 +514,6 @@ texinfo_documents = [
 
 
 def setup(app: Sphinx) -> None:
-    if app.config.language == "ja":
-        app.config.intersphinx_mapping["py"] = ("https://docs.python.org/ja/3", None)
-        app.config.html_context["discord_invite"] = "https://discord.gg/disnake"
-        app.config.resource_links["disnake"] = "https://discord.gg/disnake"
-
     # HACK: avoid deprecation warnings caused by sphinx always iterating over all class attributes
     import disnake
 

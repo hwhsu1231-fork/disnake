@@ -5,11 +5,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to disnake
-==================
+Welcome to Disnake Documentation
+================================
 
 .. image:: /images/snake.svg
+   :align: center
+   :class: dark-only
+   :height: 200px
+
 .. image:: /images/snake_dark.svg
+   :align: center
+   :class: light-only
+   :height: 200px
 
 disnake is a modern, easy to use, feature-rich, and async-ready API wrapper
 for Discord.
@@ -43,28 +50,35 @@ If you're having trouble with something, these resources might help.
 - If you're looking for something specific, try the :ref:`index <genindex>` or :ref:`searching <search>`.
 - Report bugs in the :resource:`issue tracker <issues>`.
 
-Extensions
-----------
-
-These extensions help you during development when it comes to common tasks.
-
-.. toctree::
-  :maxdepth: 1
-
-  ext/commands/index.rst
-  ext/tasks/index.rst
-
 Manuals
 -------
 
 These pages go into great detail about everything the API can do.
 
 .. toctree::
+  :caption: Manuals
   :maxdepth: 1
+  :hidden:
 
-  disnake API Reference <api/index.rst>
-  disnake.ext.commands API Reference <ext/commands/api/index.rst>
-  disnake.ext.tasks API Reference <ext/tasks/index.rst>
+  api/index
+
+- :doc:`api/index`
+
+Extensions
+----------
+
+These extensions help you during development when it comes to common tasks.
+
+.. toctree::
+  :caption: Extensions
+  :maxdepth: 1
+  :hidden:
+
+  ext/commands/index.rst
+  ext/tasks/index.rst
+
+- :doc:`ext/commands/index` - Bot commands framework
+- :doc:`ext/tasks/index` - asyncio.Task helpers
 
 Meta
 ----
@@ -72,7 +86,12 @@ Meta
 If you're looking for something related to the project itself, it's here.
 
 .. toctree::
+  :caption: Meta
   :maxdepth: 1
+  :hidden:
 
   whats_new
   version_guarantees
+
+- :doc:`whats_new` - The changelog for the library.
+- :doc:`version_guarantees` - The version guarantees for the library.
