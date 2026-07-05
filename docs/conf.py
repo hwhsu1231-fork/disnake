@@ -294,7 +294,7 @@ html_experimental_html5_writer = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = "basic"
+html_theme = "shibuya"
 
 html_context = {
     "discord_invite": "https://discord.gg/disnake",

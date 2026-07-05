@@ -89,6 +89,7 @@ docs = [
     "sphinxcontrib-towncrier==0.5.0a0",
     "sphinxcontrib-trio~=1.2.0",
     "sphinxext-opengraph==0.13.0",
+    "shibuya==2026.5.19",
     "versioningit>=3.3.0,<4",
     { include-group = "changelog" },
 ]
